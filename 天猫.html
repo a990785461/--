@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <title>天猫</title>
+    <style type="text/css">
+
+        body{font-size:12px;font-family: Arial;}
+        /*这是网页头部的样式*/
+        nav.top a:hover{color:red}
+        nav.top a:link{color:white;text-decoration: none;}
+        nav.top{background-color: aliceblue;padding-top:5px;padding-bottom:5px;border-bottom:1px solid #e7e7e7;}
+        /*border-bottom是在导航栏下加一个1元素颜色比背景色深点的方块*/
+        nav.top span,nav.top a{color:#999;margin:0px 10px 0px 10px;}
+        span.right{float:right;}
+        /*这是网页的搜索框*/
+        div.searchDiv{background-color:#C40000;width:400px;height:40px;padding:1px;margin:50px auto;display:block;}
+        div.searchDiv input{width:275px;border:1px solid transparent;height:34px;margin:1px;outline:none;}
+        /*border:1px solid transparent定义边框为透明否则会有阴影；outline:none;去掉输入框的轮廓，否则获取焦点时会发生颜色变化。*/
+        div.searchDiv button{width:110px;border:1px solid transparent;background-color: #C40000;color:white;font-size:20px;
+            font-weight:bold;}
+        div.searchBelow li{float:left;list-style: none;}
+        div.searchBelow{margin-top:3px;margin-left:-20px;}
+        div.searchBelow span{color:#999;}
+        div.searchBelow a{padding:0px 20px 0px 20px;font-size:14px;}
+        div.img{position: absolute;left:0px;top:30px;z-index: -1;}/*z-dindex定义元素在显示器上的优先级*/
+        div.img h1{color:red;font-size:60px;}
+        div.img span{color:red;font-size:20px;margin-top:-10px;display: block;}
+        a:hover{color:red;}
+        a{text-decoration: none;}
+        /*这是页脚的样式*/
+        footer{width:2000px;height:450px;background-color:red;z-index: 1;}
+        div.yejiao{width:1200px;height:100px;margin:10px auto;background-color: white;}
+        div.yejiao p{font-size: 20px;float: left;margin-left:30px;width:250px;}
+        div.yejiao span{font-size:40px;float:left;margin-right:10px;font-weight:bold;}
+        span.jiachu{font-weight:bold;}
+        div.wu{width:1120px;height:150px;margin:0px auto;background-color:white;}
+        div.wu1{/*width:90px;height:200px;*/float:left;margin-left:150px;}
+        div.wu1 span{font-size:20px;}
+        div.wu1 a{display:block;}
+        div.footer{/*width:1120px;height:500px;*/border-top-style:solid;border-top-width:1px;border-top-color:#e7e7e7;margin:10px auto;font-size: 14px;}
+        div.footer2{/*width:1120px;height:400px;*/background-color: black;border-top-style: solid;border-top-color: #C40000;margin-top:20px;padding-left:10px;padding-right: 30px; }
+        div.footer span{margin-right:10px;color: white;}
+        div.white-link{margin-bottom:20px;margin-top:10px;}
+        div.white-link a{color:white;margin-right:10px;}
+        div.white-link a:hover{color:red;text-decoration: underline;}
+        div.licenseYear{margin:10px 0px;color:#686868;}
+        p.copyright{
+            color: #A4A4A4;}
+        /*导航和轮播*/
+        div.nav{background-color:red;position:relative;height:600px;}
+        div.head {font-size: 14px;font-weight: bold;
+            color: white;background-color: #C40000;height:31px;line-height:31px;width:150px;display: inline-block;
+            margin-left:284px;margin-bottom: 10px;vertical-align:top;}
+        div.rightMenu{display: inline-block;vertical-align:top;background-color: black;height:31px;margin-left:0px;}
+        div.rightMenu ol{list-style: none;margin-left:-20px;margin-top:5px;}
+        div.rightMenu li{float:left;margin-right:20px;color: white;font-size: 14px;}
+
+        div.carousel-of-product{
+            height: 510px;
+            width:1024px;
+            margin:0px auto;
+        }
+        img.carouselImage{
+            height: 510px !important;
+        }
+        div.carouselBackgroundDiv{
+            width:100%;
+            height:510px;
+            background-color:#E8E8E8;
+            position:absolute;
+            top:36px;
+            z-index:-1;
+        }
+        /*菜单栏和产品栏*/
+        div.menu{background-color: blue;}
+        div.leftMenu{position: absolute;left:285px;top:30px;}
+        div.leftMenu ol{list-style: none;background-color: #A4A4A4;width:150px;}
+        div.leftMenu li{margin-left: -40px;margin-bottom: 10px;font-size: 14px;}
+        div.leftMenu li:hover{background-color: white;}
+        div.leftMenu a{color: black;text-decoration: none;}
+        div.leftMenu a:hover{color:blue;}/*：hover伪类可用来设定鼠标悬停时的样式*/
+        div.rightProduct{position:absolute;left:435px;top:30px;background-color: white;}
+        div.rightProduct span{width:10px;}
+        div.rightProduct p{display: block;margin-bottom: 50px;}
+        /*产品列表*/
+        div.productListBackground{background-color: #A4A4A4;}
+        div.productListBackground p{font-size: 14px;margin-left: 750px;}
+        div.productListBackground ol{list-style: none;margin-left: 700px;}
+        div.productListBackground li{background-color: white;float:left;margin-left: 5px;}
+        div.productListBackground a{text-decoration: none;color: black;}
+        div.end{font-size: 20px;color: #e7e7e7;clear: both;margin-left: 50%;}
+        /*排序和列表*/
+        div.categoryPageDiv{max-width: 1013px;margin:10px auto;}
+        div.classify{background-color: #A4A4A4;}
+         table.category{display: inline-block;}
+         table.category th{border:1px solid black;padding: 4px;}
+         table.category th:hover{background-color: #E8E8E8;}
+         table.priceMiddleColumn{display: inline-block;}
+         table.priceMiddleColumn th{border:1px solid black;padding:3px;}
+         table.priceMiddleColumn span{}
+         table.priceMiddleColumn input{width:50px;border-width:0px;}
+        div.classify a{color:black;text-decoration: none;}
+        div.classify a:hover{color:red;text-decoration: #C40000;}
+        /*产品列表*/
+        div.productListMiddle{width:1314px;margin:10px auto;}
+        div.productList{width:200px;height: 400px;} /*考虑到后面还有几个相同的产品框，可以整体合在一个div里通过这个div的宽度来居中显示*/
+        div.productList:hover{border:2px solid red;}
+        div.productList span{display: block;margin-top:20px;color: red;font-size: 14px;}
+        div.productList a{color:black;text-decoration: none;}
+        div.productList a:hover{text-decoration: underline;}
+        div.productList th{border:1px solid black;padding: 2px;}
+        /*产品图片*/
+        div.imgAndInfo{margin:40px 20px;}
+        div.imgAndInfo div.bigImageDiv{width:400px;}
+        div.imgAndInfo img.bigImage{border:1px solid #A4A4A4;
+            padding: 10px;width:400px;height:400px;}
+        div.imgAndInfo div.smallImageDiv{width:80%;margin:20px auto;}
+        div.imgAndInfo img.smallImage{border:2px solid white;height:60px;width:60px;}
+        div.imgAndInfo img.smallImage:hover{border:2px solid black;}
+        /*产品页面*/
+        div.productPage{margin:20px 40px;width:100%;height:500px;}
+        div.productPage div.img1{float:left;width:90px;height:500px;}
+        div.productPage div.img1 img{width:70px;height:70px;}
+        div.productPage div.page{overflow: hidden;}
+        div.productPage div.green{background-color: green;}
+        div.productPage div.price{background-color: #A4A4A4;margin-left: 10px;}
+        div.productPage div.sell{border-top:1px dashed #A4A4A4;border-bottom: 1px dashed #A4A4A4;padding: 20px 0px 20px 0px;margin:20px 0px 20px 0px;}
+        div.productPage div.button{width:200px;margin:10px auto;font-size: 14px;}
+        div.productPage div.button button.buy{background-color: #A4A4A4;border:1px solid red;color:red;}
+        div.productPage div.button button.add{background-color: red;color:white;border:hidden;}
+        /*商品详情*/
+        div.productDetails{width:790px;margin:40px auto;}
+        div.productDetails div.details{height:40px;border:1px solid #A4A4A4;padding: 10px;padding-left: 0px;position: relative;}
+        div.productDetails div.details div.underline{position: absolute;top:-1px;background-color: #C40000;width:70px;height:2px;}
+        div.productDetails div.details div.triangle{position:absolute;top:0px;left:30px;
+            border-color:#C40000 transparent transparent;border-style: solid;border-width:5px;width:0;height:0;
+        }/*设置三角形样式*/
+        div.productDetails div.productParameter{border:1px solid #A4A4A4;padding: 20px 0px 20px 20px;}
+        div.productDetails div.productParameter span{display:-moz-inline-box; display:inline-block; width:250px;}
+        div.productDetails div.img1{margin-top:10px;}
+
+        div.assessPage{width:790px;margin:10px auto;}
+        div.assessPage div.assess{padding:15px;border:1px solid #A4A4A4;}
+        div.assessPage div.assess span.border{padding: 15px 20px 18px 20px;border:1px solid #A4A4A4;border-top:hidden;}
+        div.assessPage div.assessDiv{margin-top:30px;}
+        div.assessPage div.assess1{height:90px;padding: 20px;margin-top:20px;border-bottom: 1px solid #A4A4A4;}
+        div.assessPage div.assess1 span.newline{display: block;width:650px;}
+    </style>
+</head>
+<body>
+<nav class="top">
+    <a href="#">天猫首页</a>
+    <span>喵，欢迎来天猫</span>
+    <a href="#">请登录</a>
+    <a href="#">免费注册</a>
+    <span class="right">
+        <a href="#">我的订单</a>
+        <a href="#">购物车<span>0</span>件</a>
+    </span>
+</nav>
+
+<div class="searchDiv">
+    <input type="text" value="时尚男鞋 太阳眼镜">
+    <button type="submit">搜索</button>
+    <div class="searchBelow">
+        <span><a href="#">平衡车</a><span>|</span></span>
+        <span><a href="#">扫地机器人</a><span>|</span></span>
+        <span><a href="#">原汁机</a><span>|</span></span>
+        <span><a href="#">冰箱</a></span>
+    </div>
+</div>
+<div class="img">
+    <h1>天猫<br /><span>TMALL.COM</span></h1>
+</div>
+
+<div style="position: relative">
+<div>
+<div class="nav">
+    <div class="head">
+        商品分类
+    </div>
+    <div class="rightMenu">
+        <ol>
+            <li>天猫超市</li>
+            <li>天猫国际</li>
+            <li>平板电视</li>
+            <li>马桶</li>
+            <li>沙发</li>
+            <li>电热水器</li>
+        </ol>
+    </div>
+
+    <!-- 轮播图片实现-->
+    <div data-ride="carousel" class="carousel-of-product carousel slide" id="carousel-of-product">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#carousel-of-product"></li>
+            <li data-slide-to="1" data-target="#carousel-of-product" class=""></li>
+            <li data-slide-to="2" data-target="#carousel-of-product" class=""></li>
+            <li data-slide-to="3" data-target="#carousel-of-product" class=""></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <!--关闭图片
+        <div role="listbox" class="carousel-inner">
+            <div class="item active">
+                <img src="http://how2j.cn/tmall/img/lunbo/1.jpg" class="carousel carouselImage">
+            </div>
+            <div class="item">
+                <img src="http://how2j.cn/tmall/img/lunbo/2.jpg" class="carouselImage">
+            </div>
+            <div class="item">
+                <img src="http://how2j.cn/tmall/img/lunbo/3.jpg" class="carouselImage">
+            </div>
+            <div class="item">
+                <img src="http://how2j.cn/tmall/img/lunbo/4.jpg" class="carouselImage">
+            </div>
+        </div>
+    </div>
+    <div class="carouselBackgroundDiv">
+    </div>
+    -->
+</div>
+</div>
+
+<div class="menu">
+    <div style="height: 400px;"></div> <!--撑开父级元素的宽度-->
+    <div class="leftMenu">
+        <ol>
+            <li>
+                <a href="#">平板电视</a>
+            </li>
+            <li>
+                <a href="#">马桶</a>
+            </li>
+            <li>
+                <a href="#">沙发</a>
+            </li>
+            <li>
+                <a href="#">电热水器</a>
+            </li>
+            <li>
+                <a href="#">平衡车</a>
+            </li>
+            <li>
+                <a href="#">扫地机器人</a>
+            </li>
+            <li>
+                <a href="#">原汁机</a>
+            </li>
+            <li>
+                <a href="#">冰箱</a>
+            </li>
+            <li>
+                <a href="#">空调</a>
+            </li>
+            <li>
+                <a href="#">女表</a>
+            </li>
+            <li>
+                <a href="#">男表</a>
+            </li>
+            <li>
+                <a href="#">男士手拿表</a>
+            </li>
+            <li>
+                <a href="#">男士西服</a>
+            </li>
+            <li>
+                <a href="#">时尚男鞋</a>
+            </li>
+            <li>
+                <a href="#">品牌女装</a>
+            </li>
+            <li>
+                <a href="#">太阳镜</a>
+            </li>
+            <li>
+                <a href="#">安全座椅</a>
+            </li>
+        </ol>
+    </div>
+    <div class="rightProduct">
+        <p>屏大影院<span></span>周末<span></span>新品特惠<span></span>32寸电视机<span></span>智能网络</p>
+        <p>USB高清解<span></span>芒果TV在线<span></span>抢购价<span></span>USB解码<span></span>10核<span></span>TCL品牌日</p>
+        <p>不要赠品<span></span>新品上市<span></span>4k硬屏<span></span>领100元劵<span></span>智能高清<span></span>8月酷暑<span></span>8月大促<span></span>天猫定制</p>
+    </div>
+</div>
+</div>
+
+<div class="productListBackground">
+    <div>
+        <p>太阳镜</p>
+        <ol>
+            <li>
+                <a href="#">好先生同款墨镜</a>
+            </li>
+            <li>
+                <a href="#">陌森太阳眼镜</a>
+            </li>
+            <li>
+                <a href="#">帕莎太阳镜</a>
+            </li>
+            <li>
+                <a href="#">变色眼镜</a>
+            </li>
+            <li>
+                <a href="#">新款男士偏光眼镜</a>
+            </li>
+        </ol>
+    </div>
+    <div style="clear: both">  <!--用来清除上面div周围的元素-->
+        <p>太阳镜</p>
+        <ol>
+            <li>
+                <a href="#">好先生同款墨镜</a>
+            </li>
+            <li>
+                <a href="#">陌森太阳眼镜</a>
+            </li>
+            <li>
+                <a href="#">帕莎太阳镜</a>
+            </li>
+            <li>
+                <a href="#">变色眼镜</a>
+            </li>
+            <li>
+                <a href="#">新款男士偏光眼镜</a>
+            </li>
+        </ol>
+    </div>
+    <div class="end">
+        END
+    </div>
+</div>
+
+    <div class="categoryPageDiv">
+        <img src="" alt="分类图片">
+        <div class="classify">
+        <table class="category">
+            <tr>
+                <th><a href="#">综合</a></th>
+                <th><a href="#">人气</a></th>
+                <th><a href="#">新品</a></th>
+                <th><a href="#">销量</a></th>
+                <th><a href="#">价格</a></th>
+            </tr>
+        </table>
+            <table class="priceMiddleColumn">
+                <tr>
+                    <th><input type="text" value="请输入"></th>
+                    <th><span>-</span></th>
+                    <th><input type="text" value="请输入"></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+<div class="productListMiddle">
+    <div class="productList">
+        <img src="" alt="产品图片">
+        <span>￥799.20</span>
+        <span><a href="#">休闲男士手包</a></span>
+        <span><a style="color: #A4A4A4" href="#">天猫专卖</a></span>
+        <table>
+            <tr>
+                <th>月成交16笔</th>
+                <th>评价14</th>
+            </tr>
+        </table>
+    </div>
+</div>
+    <div class="imgAndInfo">
+        <div class="bigImageDiv">
+            <img class="bigImage" src="http://how2j.cn/tmall/img/productSingle/8619.jpg">
+        <div class="smallImageDiv">
+            <img width="56px"  class="smallImage" src="http://how2j.cn/tmall/img/productSingle_small/8620.jpg">
+            <img  width="56px" class="smallImage"  src="http://how2j.cn/tmall/img/productSingle_small/8619.jpg">
+            <img  width="56px" class="smallImage"  src="http://how2j.cn/tmall/img/productSingle_small/8618.jpg">
+            <img  width="56px" class="smallImage"  src="http://how2j.cn/tmall/img/productSingle_small/8617.jpg">
+            <img  width="56px" class="smallImage"  src="http://how2j.cn/tmall/img/productSingle_small/8616.jpg">
+        </div>
+        </div>
+    </div>
+
+    <div class="productPage">
+        <div class="img1">
+            <img src="http://how2j.cn/tmall/img/productSingle/8619.jpg">
+        </div>
+        <div class="page">
+            <p style="font-size: 14px"><b>名媛2016新款女装夏两件套裤韩版雪纺七分裤阔腿裤休闲时尚套装女</b></p>
+            <span style="color: #C40000">高端定制 高档棉麻 现货即发 加购物车 领优惠卷</span>
+            <div class="green">
+            <span style="display: block;margin-left:45%;"><span style="font-size: 20px">聚划算</span> 此商品即将参加聚划算，<span style="color: yellow">1天19小时</span>后开始，</span>
+            </div>
+            <div style="background-color: #A4A4A4;padding: 10px 10px 10px 0px;">
+            <div class="price">
+            <span><span style="background-color: white;color:red;">天猫</span><span style="background-color: #C40000;color:white;">购物券</span>全天猫实物商品通用</span><br>
+                <span style="margin-bottom:-8px;display: block;"><span>价格</span><span style="margin-left: 25px;"></span>￥<span style="text-decoration: line-through">399.00</span></span><br>
+                <span><span>促销价</span><span style="margin-left: 25px;"></span><span style="color: red;">￥</span><span style="color: red;font-size: 20px;">379.05</span></span>
+            </div>
+            </div>
+            <div class="sell">
+                <div style="width:49%;display: inline-block;text-align: center;">销量50</div>
+                <div style="width:49%;display: inline-block;text-align: center;">累计评价19</div>
+            </div>
+            <div style="margin:10px 0px 10px 0px;">
+                <span>数量</span>
+                <input style="height:40px;width:50px;" type="text" value="1">
+                <div style="display:inline-block;height:40px;vertical-align: bottom;">
+                <span><span>上箭头</span><span style="display: block;height:10px;"></span><span>下箭头</span></span>
+                </div>
+                <span>件 库存66件</span>
+            </div>
+            <span class="a">服务承诺 <a style="color:#A4A4A4" href="#">正品保证</a> <a style="color:#A4A4A4" href="#">极速退款</a> <a style="color:#A4A4A4" href="#">赠运费险</a> <a style="color:#A4A4A4" href="#">七天无理由退换</a></span>
+            <div class="button">
+                <button class="buy" value="submit">立即购买</button>
+                <button class="add" value="submit">加入购物车</button>
+            </div>
+    </div>
+    </div>
+
+    <div class="productDetails">
+        <div class="details">
+            <div class="underline">
+            </div>
+            <div class="triangle">
+            </div>
+            <span style="color: #C40000;border:1px solid #A4A4A4;padding:10px;">商品详情</span>
+            <span style="padding-left: 10px;">累计评价</span>
+        </div>
+        <div class="productParameter">
+            <p style="color:#A4A4A4;">产品参数:</p><br>
+            <span>材质成分:聚酯纤维100%</span>
+            <span>品牌:Emyche/艾米秋</span>
+            <span>货号:129668</span><br><br>
+            <span>尺码:L M S XL X</span>
+            <span>上市年份季节:2016年夏季</span>
+            <span>颜色分类:白色 黑色 浅蓝</span><br><br>
+            <span>适用年龄:18-25周岁</span>
+        </div>
+        <div class="img1">
+            <img style="width:790px;" src="http://how2j.cn/tmall/img/productDetail/8626.jpg">
+        </div>
+    </div>
+
+    <div class="assessPage">
+        <div class="assess">
+            <span style="padding-right:20px;">商品详情</span>
+            <span class="border">累计评价 19</span>
+        </div>
+        <div class="assessDiv">
+            <div class="assess1">
+            <span class="newline">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
+                很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</span>
+                <span></span>
+            <span style="float: right;margin-top: -13px;margin-bottom: 13px;">袁***丽<span>（匿名）</span></span>
+            <span style="float: left;clear:both;">2016-08-10</span>
+            </div>
+            <div class="assess1">
+                <span>面料很好，大小也刚刚好，本来买之前还担心，犹豫，等货到了，
+                    比我心中想象的好很多，大家放心购买，很满意的购物，以后还会来??</span>
+                <span style="float: right;clear:both;">原始<span style="color:#A4A4A4;">(匿名)</span></span>
+                <span style="float: left;clear: both;">2016-8-23</span>
+            </div>
+        </div>
+    </div>
+<footer>
+<div class="yejiao">
+    <p><span>优</span><b>品质保障</b><br />品质护航购物无忧</p>
+    <p><span>七</span><b>七天无理由退换货</b><br />为您提供售后无忧保障</p>
+    <p><span>特</span><b>特色服务体验</b><br />为您呈现不一样的服务</p>
+    <p><b>帮助中心</b><br />您的购物指南</p>
+</div>
+<div class="wu">
+    <div class="wu1" style="margin-left:0px">
+        <a href="#"><span>购物指南</span></a>
+        <a href="#">免费注册</a>
+        <a href="#">开通支付宝</a>
+        <a href="#">支付宝充值</a>
+    </div>
+    <div class="wu1">
+        <a href="#"><span>天猫保障</span></a>
+        <a href="#">发票保障</a>
+        <a href="#">售后规则</a>
+        <a href="#">缺货赔付</a>
+    </div>
+    <div class="wu1">
+        <a href="#"><span>支付方式</span></a>
+        <a href="#">信用卡</a>
+        <a href="#">蚂蚁花呗</a>
+        <a href="#">快捷支付</a>
+        <a href="#">快捷支付</a>
+    </div>
+    <div class="wu1">
+        <a href="#"><span>商家服务</span></a>
+        <a href="#">商家入驻</a>
+        <a href="#">商家中心</a>
+        <a href="#">天猫智库</a>
+        <a href="#">天猫规则</a>
+        <a href="#">物流服务</a>
+        <a href="#">喵言喵语</a>
+        <a href="#">运营服务</a>
+    </div>
+    <div class="wu1">
+        <a href="#"><span>手机天猫</span></a>
+    </div>
+</div>
+    <div class="footer">
+        <div class="footer2">
+    <div class="white-link">
+        <a href="#">关于天猫</a>
+        <a href="#">帮助中心</a>
+        <a href="#">开放平台</a>
+        <a href="#">诚聘英才</a>
+        <a href="#">联系我们</a>
+        <a href="#">网站合作</a>
+        <a href="#">法律生明</a>
+        <a href="#">知识产权</a>
+        <a href="#">廉政举报</a>
+    </div>
+    <div  class="white-link">
+        <a href="#">阿里巴巴集团</a><span>|</span> <a href="#">淘宝网</a> <span>|</span><a href="#">天猫</a> <span>|</span><a href="#">聚划算</a> <span>|</span><a href="#">全球速卖通</a> <span>|</span><a href="#">阿里巴巴国际交易市场</a> <span>|</span><a href="#">1688</a><span>|</span>
+        <a href="#">阿里妈妈</a> <span>|</span><a href="#">阿里旅行.去啊</a><span>|</span> <a href="#">阿里云计算</a><span>|</span> <a href="#">阿里通信</a><span>|</span> <a href="#">YunOs</a><span>|</span> <a href="#">万网</a> <span>|</span><a href="#">高德</a><span>|</span> <a href="#">优视</a> <span>|</span><a href="#">友盟</a><span>|</span>
+        <a href="#">虾米</a> <span>|</span><a href="#">天天动听</a><span>|</span> <a href="#">来往</a> <span>|</span><a href="#">钉钉</a> <span>|</span><a href="#">支付宝</a>
+    </div>
+    <div>
+        <p class="copyright">增值电信业务经营许可证： 浙B2-20110446 网络文化经营许可证：浙网文[2015]0295-065号 互联网医疗保健信息服务 审核同意书 浙卫网审【2014】6号 互联网药品信息服务资质证书编号：浙-（经营性）-2012-0005</p>
+    </div>
+    <div class="licenseYear">
+        © 2003-2016 TMALL.COM 版权所有
+    </div>
+    </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
