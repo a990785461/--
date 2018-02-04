@@ -141,12 +141,22 @@
         div.productDetails div.productParameter span{display:-moz-inline-box; display:inline-block; width:250px;}
         div.productDetails div.img1{margin-top:10px;}
 
+        /*累计评价界面*/
         div.assessPage{width:790px;margin:10px auto;}
         div.assessPage div.assess{padding:15px;border:1px solid #A4A4A4;}
         div.assessPage div.assess span.border{padding: 15px 20px 18px 20px;border:1px solid #A4A4A4;border-top:hidden;}
         div.assessPage div.assessDiv{margin-top:30px;}
         div.assessPage div.assess1{height:90px;padding: 20px;margin-top:20px;border-bottom: 1px solid #A4A4A4;}
         div.assessPage div.assess1 span.newline{display: block;width:650px;}
+
+        div.shopping{width:790px;margin:20px auto;height:400px;overflow: hidden;}
+        div.shopping div.accounts1{float: right;}
+        div.shopping div.accounts1 span.color{color:red;}
+        div.shopping div.accounts1 button{background-color: #686868;color: white;border:hidden;width:50px;height:25px;border-radius:2px;}
+        div.shopping div.accounts2{background-color: #A4A4A4;padding:20px 0px 20px 20px;margin-top:50px;}
+        div.shopping div.accounts2 div.float{float:right;margin-top:-20px;}
+        div.shopping div.accounts2 span.color{color: red;font-size: 20px;}
+        div.shopping div.accounts2 button{background-color: #686868;color:white;font-size: 20px;border:hidden;width:120px;height: 67px;}
     </style>
 </head>
 <body>
@@ -458,10 +468,27 @@
             <span style="float: left;clear:both;">2016-08-10</span>
             </div>
             <div class="assess1">
-                <span>面料很好，大小也刚刚好，本来买之前还担心，犹豫，等货到了，
+                <span class="newline">面料很好，大小也刚刚好，本来买之前还担心，犹豫，等货到了，
                     比我心中想象的好很多，大家放心购买，很满意的购物，以后还会来??</span>
                 <span style="float: right;clear:both;">原始<span style="color:#A4A4A4;">(匿名)</span></span>
                 <span style="float: left;clear: both;">2016-8-23</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="shopping">
+        <div class="accounts1">
+            <span>已选商品（不含运费）<span class="color">￥0.00</span></span>
+            <button value="submit">结算</button>
+        </div>
+        <div style="clear: both">
+            <span>订单部分</span>
+        </div>
+        <div class="accounts2">
+            <label><input type="checkbox" value="">全选</label>
+            <div class="float">
+            <span>已选商品<span>0</span>件 合计（不含运费）:<span class="color">￥0.00</span></span>
+            <button value="submit">结算</button>
             </div>
         </div>
     </div>
