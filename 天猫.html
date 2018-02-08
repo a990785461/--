@@ -148,7 +148,7 @@
         div.assessPage div.assessDiv{margin-top:30px;}
         div.assessPage div.assess1{height:90px;padding: 20px;margin-top:20px;border-bottom: 1px solid #A4A4A4;}
         div.assessPage div.assess1 span.newline{display: block;width:650px;}
-
+        /*购物车界面1*/
         div.shopping{width:790px;margin:20px auto;height:400px;overflow: hidden;}
         div.shopping div.accounts1{float: right;}
         div.shopping div.accounts1 span.color{color:red;}
@@ -157,6 +157,14 @@
         div.shopping div.accounts2 div.float{float:right;margin-top:-20px;}
         div.shopping div.accounts2 span.color{color: red;font-size: 20px;}
         div.shopping div.accounts2 button{background-color: #686868;color:white;font-size: 20px;border:hidden;width:120px;height: 67px;}
+        /*购物车界面2*/
+        div.shopping1{width:790px;margin:20px auto;}
+        div.shopping1 th.leftSpace1{padding: 10px;}
+        div.shopping1 tr.firstline{padding: 20px;border: 1px solid #A4A4A4;}
+        div.shopping1 tr.firstline td.leftSpace{padding: 10px;}
+        div.shopping1 tr.firstline td.leftSpace a{color:black;text-decoration: none;}
+        div.shopping1 tr.firstline td.leftSpace a:hover{color: #C40000;text-decoration: underline;}
+        div.shopping1 tr.firstline td.leftSpace img.img1{width:80px;height:80px;border:1px solid black;}
     </style>
 </head>
 <body>
@@ -491,6 +499,73 @@
             <button value="submit">结算</button>
             </div>
         </div>
+    </div>
+
+    <div class="shopping1">
+        <table>
+            <tr style="padding: 30px;">
+                <th class="leftSpace1"><input type="checkbox" name="" value="">全选</th>
+                <th class="leftSpace1">商品信息</th>
+                <th class="leftSpace1">单价</th>
+                <th class="leftSpace1">数量</th>
+                <th class="leftSpace1">金额</th>
+                <th class="leftSpace1">操作</th>
+            </tr>
+            <tr class="firstline" style="border: 1px solid #A4A4A4">
+                <td class="leftSpace"><input type="checkbox" name="" value=""><img class="img1" src="http://how2j.cn/tmall/img/productSingle_middle/3665.jpg"></td>
+                <td class="leftSpace">
+                    <div style="position: relative;height:80px;">
+                    <a href="#">美国扫地机器人</a>
+                    <div style="position: absolute;bottom:0px;">
+                    <img title="支持信用卡支付" src="http://how2j.cn/tmall/img/site/creditcard.png">
+                    <img title="消费者保障服务，7天退货" src="http://how2j.cn/tmall/img/site/7day.png">
+                    <img title="消费者保障服务，承诺如实描述" src="http://how2j.cn/tmall/img/site/promise.png">
+                    </div>
+                    </div>
+                </td>
+                <td class="leftSpace"><span style="text-decoration: line-through">￥7580.0</span><br><span style="color:red;">￥5306.0</span></td>
+                <td class="leftSpace">
+                    <button style="background-color:transparent;margin-right: -3px;" value="submit">-</button>
+                    <input style="width:50px" type="text" value="4">
+                    <button style="margin-left: -3px;" value="submit">+</button>
+                </td>
+                <td class="leftSpace"><span style="color:red;font-weight: bold;font-size: 14px;">￥5306.00</span></td>
+                <td class="leftSpace">
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+            <tr class="firstline">
+                <td class="leftSpace">
+                    <input style="margin-right: -3px" type="checkbox" value="" name="">
+                    <img class="img1" src="http://how2j.cn/tmall/img/productSingle_middle/8510.jpg">
+                </td>
+                <td class="leftSpace">
+                    <div style="position: relative;height:80px;">
+                    <a href="#">阔腿裤三件套</a>
+                        <div style="position: absolute;bottom:0px">
+                    <img title="支持信用卡支付" src="http://how2j.cn/tmall/img/site/creditcard.png">
+                    <img title="消费者保障服务，7天退货" src="http://how2j.cn/tmall/img/site/7day.png">
+                    <img title="消费者保障服务，承诺如实描述" src="http://how2j.cn/tmall/img/site/promise.png">
+                        </div>
+                    </div>
+                </td>
+                <td class="leftSpace">
+                    <span style="text-decoration: line-through;">￥235.0</span><br>
+                    <span style="color:red;">￥152.74</span>
+                </td>
+                <td class="leftSpace">
+                    <button style="margin-right: -3px" value="submit">-</button>
+                    <input style="width:50px" type="text" value="1" name="">
+                    <button style="margin-left: -3px" value="submit">+</button>
+                </td>
+                <td class="leftSpace">
+                    <span style="color:red;font-size: 14px;font-weight: bold;">￥152.75</span>
+                </td>
+                <td class="leftSpace">
+                    <a href="#">删除</a>
+                </td>
+            </tr>
+        </table>
     </div>
 <footer>
 <div class="yejiao">
