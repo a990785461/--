@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
     <meta charset="UTF-8">
     <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
     <title>天猫</title>
@@ -165,6 +166,17 @@
         div.shopping1 tr.firstline td.leftSpace a{color:black;text-decoration: none;}
         div.shopping1 tr.firstline td.leftSpace a:hover{color: #C40000;text-decoration: underline;}
         div.shopping1 tr.firstline td.leftSpace img.img1{width:80px;height:80px;border:1px solid black;}
+
+        div.order{width:60%;margin:10px auto;}
+        div.order div.line1{height:10%;border-bottom:1px solid #A4A4A4;padding: 20px;position: relative;}
+        div.order div.line1 span{padding: 0px 20px 0px 20px;}
+        div.order div.line1 a.color{color: #C40000;}
+        div.order div.line1 a{color:black;font-size: 1.5rem;text-decoration: none;font-weight: bold;}
+        div.order div.line1 a:hover{color:#C40000;}
+        div.order div.line1 div.underline{position:absolute;bottom: 0px;left:0px;height: 2px;width:147px;background-color: #C40000;}
+        div.order div.line2{margin-top:30px;background-color: #686868;}
+        div.order div.line2 td.long{padding:10px 100px 10px 180px;}
+        div.order div.line2 td{padding: 10px 0px 10px 80px;}
     </style>
 </head>
 <body>
@@ -566,6 +578,33 @@
                 </td>
             </tr>
         </table>
+    </div>
+
+    <div class="order">
+        <div class="line1">
+            <span><a class="color" href="#">所有订单</a></span>
+            <span>|</span>
+            <span><a href="#">待付款</a></span>
+            <span>|</span>
+            <span><a href="#">代发货</a> </span>
+            <span>|</span>
+            <span><a href="#">待收货</a></span>
+            <span>|</span>
+            <span><a href="#">待评价</a> </span>
+            <div class="underline">
+            </div>
+        </div>
+        <div class="line2">
+            <table>
+                <tr>
+                    <td class="long">宝贝</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>实付款</td>
+                    <td>交易操作</td>
+                </tr>
+            </table>
+        </div>
     </div>
 <footer>
 <div class="yejiao">
